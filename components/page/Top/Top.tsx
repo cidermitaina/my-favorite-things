@@ -2,7 +2,7 @@
 import React from 'react'
 import Head from 'next/head'
 
-import styles from './Top.module.css'
+import styles from './Top.module.scss'
 
 export const Top = () => {
   return (
