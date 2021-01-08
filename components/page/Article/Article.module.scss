@@ -1,0 +1,144 @@
+.article {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.mv {
+  text-align: center;
+}
+
+.title {
+  text-align: center;
+  font-weight: 500;
+  font-family: Cormorant Garamond,'游明朝','Yu Mincho',YuMincho,'Hiragino Mincho Pro',serif;
+  color: #3a3a3a;
+}
+
+.text {
+  text-align: center;
+  font-size: 16px;
+}
+
+.left {
+  width: 50%;
+}
+
+.right {
+  width: 50%;
+  overflow-y: scroll;
+}
+
+.contener {
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 32px;
+}
+
+.blockTitle {
+  text-align: right;
+  font-size: 20px;
+}
+
+.list {
+  list-style: none;
+  
+  li {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    z-index: 10;
+    height: 50px;
+
+    &::before {
+      content: '';
+      width: 100%;
+      height: 2px;
+      position: absolute;
+      background-color: #272727;
+      opacity: 0.08;
+      top: 14px;
+      left: 0;
+      z-index: 1;
+      -webkit-transition: all 0.2s linear;
+      transition: all 0.2s linear;
+    }
+  }
+}
+
+.list li span{
+  position: relative;
+  z-index: 100;
+  background-color: #fff;
+  padding: 0 8px;
+}
+
+.arrowLinkArea {
+  text-align: center;
+  padding-bottom: 40px;
+  width: 400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.arrowLink {
+  position: relative;
+  display: inline-block;
+  color: #000;
+  vertical-align: middle;
+  text-decoration: none;
+  font-size: 15px;
+  height: 10px;
+  width: 45px;
+
+  &::before, &::after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    content: "";
+    vertical-align: middle;
+  }
+
+  &::before{
+    width: 45px;
+    height: 1px;
+    background: #515456;
+    left: 0;
+  }
+
+  &::after{
+    left: 39px;
+    width: 6px;
+    height: 6px;
+    border-top: 1px solid #515456;
+  }
+}
+
+.rightLink {
+  @extend .arrowLink;
+
+  &::after{
+    border-right: 1px solid #515456;
+    transform: rotate(45deg)
+  }
+}
+
+.leftLink {
+  @extend .arrowLink;
+
+  &::after{
+    border-left: 1px solid #515456;
+    transform: rotate(-45deg);
+    left: 0;
+  }
+}
+
+.number {
+  margin: 0;
+}
