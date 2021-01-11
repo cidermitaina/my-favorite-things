@@ -47,12 +47,12 @@ export const Article = ({ postData }) => {
         </article>
         <div className={styles.arrowLinkArea}>
           {postData.prev && 
-            <Link href={postData.prev} >
+            <Link href={`/article/${postData.category}/${postData.prev}`} >
               <a href="" className={styles.leftLink}></a>
             </Link>
           }
           {postData.next && 
-            <Link href={postData.next} >
+            <Link href={`/article/${postData.category}/${postData.next}`} >
             <a href="" className={styles.rightLink}></a>
           </Link>
           }

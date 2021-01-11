@@ -3,8 +3,9 @@ import React from 'react'
 import Head from 'next/head'
 
 import styles from './Top.module.scss'
+import Link from 'next/link'
 
-export const Top = () => {
+export const Top = ({categorizedData}) => {
   return (
     <>
       <Head>
@@ -18,97 +19,23 @@ export const Top = () => {
         </div>
         <div className={styles.right}>
           <div className={styles.contener}>
-            <h2 className={styles.blockTitle}>
-              Place
-            </h2>
-            <ul className={styles.list}>
-              <li>
-                <span>小豆島の海</span>
-                <span>1</span>
-              </li>
-              <li>
-                <span>夙川公園</span>
-                <span>2</span>
-              </li>
-              <li>
-                <span>代々木</span>
-                <span>3</span>
-              </li>
-              <li>
-                <span>三鷹のイルミネーション</span>
-                <span>4</span>
-              </li>
-            </ul>
-          </div>
-          
-          <div className={styles.contener}>
-            <h2 className={styles.blockTitle}>
-              PLACE
-            </h2>
-            <ul className={styles.list}>
-              <li>
-                <span>小豆島の海</span>
-                <span>1</span>
-              </li>
-              <li>
-                <span>夙川公園</span>
-                <span>2</span>
-              </li>
-              <li>
-                <span>代々木</span>
-                <span>3</span>
-              </li>
-              <li>
-                <span>三鷹のイルミネーション</span>
-                <span>4</span>
-              </li>
-            </ul>
-          </div>
-          <div className={styles.contener}>
-            <h2 className={styles.blockTitle}>
-              PLACE
-            </h2>
-            <ul className={styles.list}>
-              <li>
-                <span>小豆島の海</span>
-                <span>1</span>
-              </li>
-              <li>
-                <span>夙川公園</span>
-                <span>2</span>
-              </li>
-              <li>
-                <span>代々木</span>
-                <span>3</span>
-              </li>
-              <li>
-                <span>三鷹のイルミネーション</span>
-                <span>4</span>
-              </li>
-            </ul>
-          </div>
-          <div className={styles.contener}>
-            <h2 className={styles.blockTitle}>
-              PLACE
-            </h2>
-            <ul className={styles.list}>
-              <li>
-                <span>小豆島の海</span>
-                <span>1</span>
-              </li>
-              <li>
-                <span>夙川公園</span>
-                <span>2</span>
-              </li>
-              <li>
-                <span>代々木</span>
-                <span>3</span>
-              </li>
-              <li>
-                <span>三鷹のイルミネーション</span>
-                <span>4</span>
-              </li>
-            </ul>
+            {categorizedData.map((lists) => (
+              <div key ={lists.category}>
+                <h2 className={styles.blockTitle} >
+                  {lists.category}
+                </h2>
+                {lists.data.map(({id, title}, index:number) => (
+                  <ul className={styles.list} key={index}>
+                    <li>
+                      <Link href={`/article/${lists.category}/${id}`}>
+                        <a>{title}</a>
+                      </Link>
+                      <span>{index+1}</span>
+                    </li>
+                  </ul>
+                ))}
+              </div>
+            ))}
           </div>
         </div>
       </main>
