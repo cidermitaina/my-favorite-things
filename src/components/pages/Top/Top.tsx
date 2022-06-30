@@ -64,6 +64,17 @@ const TitleWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative;
+
+  &::before {
+    content: '';
+    width: 1px;
+    background-color: #ddd;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+  }
 `
 const Title = styled.h1`
   font-size: 26px;
@@ -96,17 +107,10 @@ const SnsLink = styled.a`
 `
 const ItemWrapper = styled.div`
   padding: 48px 0 48px 40px;
-  position: relative;
-
-  &::before {
-    content: '';
-    width: 1px;
-    background-color: #ddd;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-  }
+  height: 100vh;
+  overflow-y: scroll;
+  box-sizing: border-box;
+  flex-grow: 1;
 
   @media (max-width: 739px) {
     height: auto;
