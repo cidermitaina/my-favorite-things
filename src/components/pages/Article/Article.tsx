@@ -57,6 +57,7 @@ const Wrapper = styled.div`
 
 const ImageWrapper = styled.div`
   width: 50%;
+  padding: 10px;
   margin-right: 16px;
   aspect-ratio: 2016 / 1512;
   background-color: #ddd;
@@ -71,6 +72,7 @@ const ImageWrapper = styled.div`
 
   > img {
     width: 100%;
+    aspect-ratio: 2016 / 1512;
     border-radius: 63% 37% 30% 70%/50% 45% 55% 50%;
   }
 `
