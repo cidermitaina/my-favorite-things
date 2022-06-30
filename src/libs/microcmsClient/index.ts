@@ -1,0 +1,1 @@
+export { microcmsClient } from './microcmsClient'
